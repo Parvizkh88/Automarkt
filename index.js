@@ -108,12 +108,12 @@ let theTitle = document.createElement('h2');
 
 theTitle.innerHTML = 'All Cars';
 
-searachDiv.append(searachInput, filterButton, theTitle);
+searachDiv.append(searachInput, filterButton);
 advanceSearchDiv.append(advanceSearchTitle, carBrandInput, carCylindersInput,
     countryInput, advanceSearchButton, goToNormalSearch);
 mostSearchedDiv.appendChild(mostSearchedTitle);
 bestDealsDiv.appendChild(bestDealsTitle);
-document.body.append(searachDiv, advanceSearchDiv);
+document.body.append(searachDiv, advanceSearchDiv, theTitle);
 document.body.appendChild(cards)
 document.body.append(mostSearchedDiv, bestDealsDiv);
 
