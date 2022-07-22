@@ -1,3 +1,22 @@
+body {
+  background-color: #f4f4f4;
+  padding: 1rem 5rem 2rem;
+  text-align: center;
+  width: 100%;
+}
+#header {
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
+}
+#nav-bar {
+  width: 100%;
+  display: inline-block;
+
+  margin-bottom: 2rem;
+}
 h1 {
   text-align: center;
   padding-bottom: 1rem;
@@ -6,13 +25,19 @@ h1 {
 p {
   color: gray;
 }
-.card {
-  width: 18rem;
-}
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1rem;
+  justify-items: center;
+  background-color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
+}
+.card {
+  width: 18rem;
 }
 .input1 {
   border-radius: 5%;
@@ -20,42 +45,31 @@ p {
 }
 .searachDiv {
   text-align: center;
+  margin: 4rem;
 }
 .advanceSearchDiv {
   background-color: burlywood;
   display: none;
   width: 800px;
-  height: 200px;
+  height: 150px;
   align-content: center;
-  margin: 5rem auto 5rem;
+  margin: 2rem auto 2rem;
   padding-left: 1.5rem;
-}
-.searachDiv {
-  margin-top: 14rem;
-}
-#header {
-  display: flex;
-  position: fixed;
-  top: 0;
 }
 .logo {
   height: auto;
   width: 6rem;
   display: flex;
   margin-left: 0.6rem;
-  margin-top: 0.6rem;
-}
-#nav-bar {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
+  border-radius: 10px;
 }
 .brand-title {
   margin: 0.5rem;
 }
 .navbar-links {
   height: 100%;
+  margin-top: -6rem;
+  align-content: center;
 }
 .navbar-links ul {
   display: flex;
