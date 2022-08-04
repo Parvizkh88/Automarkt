@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@100&family=Muli&display=swap");
 body {
   background-color: #f4f4f4;
   padding: 1rem 5rem 2rem;
@@ -14,7 +15,6 @@ body {
 #nav-bar {
   width: 100%;
   display: inline-block;
-
   margin-bottom: 2rem;
 }
 h1 {
@@ -103,6 +103,52 @@ p {
   background-color: #101010;
   border-radius: 10px;
   display: none;
+}
+* {
+  box-sizing: border-box;
+}
+.carShowContainer {
+  display: flex;
+  width: 90vw;
+  margin-top: 40px;
+}
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  color: #ffffff;
+}
+.panel.active {
+  flex: 6;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+@media (max-width: 600px) {
+  .carShowContainer {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6) {
+    display: none;
+  }
 }
 @media (max-width: 930px) {
   #nav-bar {

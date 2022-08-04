@@ -43,6 +43,20 @@ advanceSearchTitle.innerHTML = 'Advance search';
 mostSearchedTitle.innerHTML = 'Most Searched';
 bestDealsTitle.innerHTML = 'Best Deals';
 
+let panels = document.querySelectorAll('.panel');
+panels.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        removeActiveClass()
+        panel.classList.add('active')
+    })
+
+})
+function removeActiveClass() {
+    panels.forEach((panel) => {
+        panel.classList.remove('active')
+    })
+}
+
 fetch('cars.json')
     .then(function (response) {
         return response.json()
@@ -91,19 +105,16 @@ function appendData(data) {
 
         document.querySelector(`#cardId${i}`).addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('gg', e.target.id)
-            console.log('dragstart!');
         })
         document.querySelector('.cards').addEventListener('dragover', (e) => {
             e.preventDefault();
-            console.log('dragover is happening!');
         })
         document.querySelector('.cards').addEventListener('drop', (e) => {
-            console.log(e.dataTransfer.getData('gg'));
             e.target.appendChild(document.getElementById(e.dataTransfer.getData('gg')));
         })
     }
-
 }
+
 let theTitle = document.createElement('h2');
 
 theTitle.innerHTML = 'All Cars';
@@ -118,18 +129,16 @@ document.body.appendChild(cards)
 document.body.append(mostSearchedDiv, bestDealsDiv);
 
 bestDealsTitle.setAttribute('draggable', 'true');
+
 document.getElementById('bestDealsTitleId').addEventListener('dragstart', (e) => {
-    console.log('dragstart is done!');
     e.dataTransfer.setData('myData', e.target.id);
 })
 
 document.querySelector('.mostSearchedDiv').addEventListener('dragover', (e) => {
-    console.log('dragover is done!');
     e.preventDefault();
 });
 
 document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
-    console.log('drop is done!');
     let myData2 = e.dataTransfer.getData('myData');
     e.target.appendChild(document.getElementById(myData2));
 })
@@ -169,18 +178,19 @@ document.querySelector('.filterButton').addEventListener('click', function () {
     searachDiv.style.display = 'none';
     advanceSearchDiv.style.display = 'block';
 })
-
 //The code below hides advanceSearchDiv when we minimize the size of the browser
 if (document.body.style.width < '800px') {
     advanceSearchDiv.style.display = 'none';
 }
+
 document.querySelector('.goToNormalSearch').addEventListener('click', function () {
     searachDiv.style.display = 'block';
     advanceSearchDiv.style.display = 'none';
 })
+
 const toggleButton = document.getElementsByClassName('toggle-button')[0];
 const navbarLinks = document.getElementsByClassName('navbar-links')[0];
-
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
+
