@@ -2,11 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans");
 body {
   background-color: #f4f4f4;
-  /* padding: 1rem 5rem 2rem; */
-  /* text-align: center; */
   justify-content: center;
-  /* width: 100%; */
-  /* max-width: 1200px; */
   margin: 0 auto;
 }
 #header {
@@ -20,7 +16,6 @@ body {
   width: 100%;
   display: inline-block;
   margin-bottom: 2rem;
-  /* z-index: inherit; */
 }
 h1 {
   text-align: center;
@@ -45,8 +40,6 @@ p {
 }
 .card {
   width: 18rem;
-  /* position: absolute; */
-  /* background-color: teal; */
   z-index: -1;
 }
 .input1 {
@@ -62,9 +55,16 @@ p {
   display: none;
   width: 800px;
   height: 150px;
-  align-content: center;
+  justify-content: center;
   margin: 2rem auto 2rem;
   padding-left: 1.5rem;
+  position: relative;
+}
+.advanceSearchTitle {
+  position: relative;
+  margin: 10px auto;
+  justify-content: center;
+  width: 50%;
 }
 .logo {
   height: auto;
@@ -120,10 +120,10 @@ p {
 }
 .carShowContainer {
   display: flex;
-  max-width: 90vw;
-  margin-top: 40px;
-  /* position: absolute; */
-  /* z-index: 1; */
+  width: 90%;
+  margin: 1rem auto;
+  z-index: 1;
+  position: relative;
 }
 .panel {
   background-size: auto 100%;
@@ -136,7 +136,6 @@ p {
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-in;
-  z-index: -2;
 }
 .panel h3 {
   font-size: 24px;
@@ -147,10 +146,10 @@ p {
   opacity: 0;
   color: #ffffff;
 }
-.panel.active {
+.panel.panelActive {
   flex: 6;
 }
-.panel.active h3 {
+.panel.panelActive h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
@@ -208,6 +207,11 @@ p {
   .logo {
     width: 2.1rem;
   }
+  .carBrandInput,
+  .carCylindersInput,
+  .countryInput {
+    width: 74%;
+  }
 }
 .mostSearchedDiv {
   padding: 3rem;
@@ -257,7 +261,7 @@ p {
 }
 .nav a.current,
 .nav a:hover {
-  color: red;
+  color: hsl(25, 97%, 53%);
   font-weight: bold;
 }
 * {
