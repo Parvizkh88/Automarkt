@@ -189,8 +189,17 @@ document.querySelector('.goToNormalSearch').addEventListener('click', function (
 })
 
 const toggleButton = document.getElementsByClassName('toggle-button')[0];
-const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+const navbarLinks = document.getElementsByClassName('shortcuts-links')[0];
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', fixNav);
 
+function fixNav() {
+    if (window.scrollY > nav.offsetHeight + 150) {
+        nav.classList.add('active')
+    } else {
+        nav.classList.remove('active')
+    }
+}
