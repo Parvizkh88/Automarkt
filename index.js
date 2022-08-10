@@ -188,12 +188,6 @@ document.querySelector('.goToNormalSearch').addEventListener('click', function (
     advanceSearchDiv.style.display = 'none';
 })
 
-const toggleButton = document.getElementsByClassName('toggle-button')[0];
-const navbarLinks = document.getElementsByClassName('shortcuts-links')[0];
-toggleButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
-})
-
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', fixNav);
 
@@ -206,14 +200,25 @@ function fixNav() {
         nav.classList.remove('active')
     }
 }
-//------------------------------------------------
+
+const shortcutsLinks = document.querySelector('.shortcuts-links');
+window.addEventListener('scroll', shortcutCursor);
+
+function shortcutCursor() {
+    console.log(window.scrollY);
+    if (window.scrollY > 741) {
+        shortcutsLinks.style.zIndex = "-2";
+    }
+    else {
+        shortcutsLinks.style.zIndex = "1";
+    }
+}
+
 const carShowContainer = document.querySelector('.carShowContainer');
 window.addEventListener('scroll', panelCursor);
-console.log(window.scrollY);
-
 function panelCursor() {
     console.log(window.scrollY);
-    if (window.scrollY > 875) {
+    if (window.scrollY > 872) {
         carShowContainer.style.zIndex = "-2";
     } else {
         carShowContainer.style.zIndex = "1";
