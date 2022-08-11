@@ -191,7 +191,6 @@ document.querySelector('.goToNormalSearch').addEventListener('click', function (
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', fixNav);
 
-
 function fixNav() {
 
     if (window.scrollY > nav.offsetHeight + 150) {
@@ -240,7 +239,7 @@ if (widerScreenWidth.matches) {
         container.classList.toggle('active')
     }
     )
-    console.log('this is smaller than 500');
+    // console.log('this is smaller than 500');
 } else {
     nav.classList.remove('strethNav');
 }

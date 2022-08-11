@@ -6,6 +6,7 @@ body {
   background-color: #f4f4f4;
   justify-content: center;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 h1 {
   text-align: center;
