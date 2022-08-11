@@ -28,6 +28,8 @@ p {
   box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
   z-index: -2;
   position: relative;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .card {
   width: 18rem;
@@ -180,9 +182,19 @@ p {
 }
 .mostSearchedDiv {
   padding: 3rem;
+  height: 500px;
+  margin: 50px 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
 }
 .bestDealsDiv {
   padding: 3rem;
+  height: 500px;
+  margin: 50px 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
 }
 .draggable.dragging {
   opacity: 0.5;
@@ -366,4 +378,14 @@ nav.strethNav ul {
   .active .icon .line2 {
     transform: rotate(765deg) translateY(-5.5px);
   }
+}
+.box {
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+.box.scrollBoxShow {
+  transform: translateX(0);
 }

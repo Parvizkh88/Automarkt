@@ -28,10 +28,10 @@ countryInput.className = 'countryInput';
 carBrandInput.setAttribute('placeholder', 'Brand');
 carCylindersInput.setAttribute('placeholder', 'Cylinders');
 countryInput.setAttribute('placeholder', 'Country');
-mostSearchedDiv.className = 'mostSearchedDiv';
+mostSearchedDiv.classList.add('mostSearchedDiv', 'box');
 mostSearchedDiv.id = 'mostSearchedDiv';
 mostSearchedTitle.className = 'mostSearchedTitle';
-bestDealsDiv.className = 'bestDealsDiv';
+bestDealsDiv.classList.add('bestDealsDiv', 'box');
 bestDealsDiv.id = 'bestDealsDiv';
 bestDealsTitle.className = 'bestDealsTitle';
 bestDealsTitle.id = 'bestDealsTitleId';
@@ -94,7 +94,7 @@ function appendData(data) {
 
         theButton.innerHTML = 'Details';
 
-        cards.className = 'cards';
+        cards.classList.add('cards', 'box', 'scrollBoxShow');
         card.id = `cardId${i}`;
         card.setAttribute('draggable', 'true');
         card.classList.add('card', 'draggable');
@@ -187,7 +187,7 @@ document.querySelector('.goToNormalSearch').addEventListener('click', function (
     searachDiv.style.display = 'block';
     advanceSearchDiv.style.display = 'none';
 })
-
+//----------------------------------
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', fixNav);
 
@@ -200,12 +200,12 @@ function fixNav() {
         nav.classList.remove('active')
     }
 }
-
+//--------------------------
 const shortcutsLinks = document.querySelector('.shortcuts-links');
 window.addEventListener('scroll', shortcutCursor);
 
 function shortcutCursor() {
-    if (window.scrollY > 741) {
+    if (window.scrollY > 715) {
         shortcutsLinks.style.zIndex = "-2";
     }
     else {
@@ -216,23 +216,22 @@ function shortcutCursor() {
 const carShowContainer = document.querySelector('.carShowContainer');
 window.addEventListener('scroll', panelCursor);
 function panelCursor() {
-    // console.log(window.scrollY);
-    if (window.scrollY > 872) {
+    console.log(window.scrollY);
+    if (window.scrollY > 846) {
         carShowContainer.style.zIndex = "-2";
     } else {
         carShowContainer.style.zIndex = "1";
     }
 }
-//--------------------------
+//------------------------------
 var widerScreenWidth = window.matchMedia("(max-width: 501px)");
 var screenWidth = document.body.clientWidth;
+nav.classList.toggle('mobileNav');
 
 console.log(screenWidth);
 if (widerScreenWidth.matches) {
-    nav.classList.add('mobileNav');
     nav.classList.remove('nav');
 
-    //---------------------------------------
     const toggle = document.getElementById('toggle');
     const container = document.getElementById('mobileNavId');
     // The first line below was done because I wanted to have the default nav in mobile starting small
@@ -241,11 +240,24 @@ if (widerScreenWidth.matches) {
         container.classList.toggle('active')
     }
     )
-    //---------------------------------------
     console.log('this is smaller than 500');
 } else {
-    nav.classList.remove('mobileNav')
     nav.classList.remove('strethNav');
 }
+//-------------------------------------
+let boxes = document.querySelectorAll('.box');
 
+window.addEventListener('scroll', checkBoxes)
+checkBoxes()
+function checkBoxes() {
+    const triggerPoint = window.innerHeight / 5 * 4;
 
+    boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top
+        if (boxTop < triggerPoint) {
+            box.classList.add('scrollBoxShow')
+        } else {
+            box.classList.remove('scrollBoxShow')
+        }
+    })
+}
