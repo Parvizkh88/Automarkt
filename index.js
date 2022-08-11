@@ -205,7 +205,6 @@ const shortcutsLinks = document.querySelector('.shortcuts-links');
 window.addEventListener('scroll', shortcutCursor);
 
 function shortcutCursor() {
-    console.log(window.scrollY);
     if (window.scrollY > 741) {
         shortcutsLinks.style.zIndex = "-2";
     }
@@ -217,10 +216,36 @@ function shortcutCursor() {
 const carShowContainer = document.querySelector('.carShowContainer');
 window.addEventListener('scroll', panelCursor);
 function panelCursor() {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY > 872) {
         carShowContainer.style.zIndex = "-2";
     } else {
         carShowContainer.style.zIndex = "1";
     }
 }
+//--------------------------
+var widerScreenWidth = window.matchMedia("(max-width: 501px)");
+var screenWidth = document.body.clientWidth;
+
+console.log(screenWidth);
+if (widerScreenWidth.matches) {
+    nav.classList.add('mobileNav');
+    nav.classList.remove('nav');
+
+    //---------------------------------------
+    const toggle = document.getElementById('toggle');
+    const container = document.getElementById('mobileNavId');
+    // The first line below was done because I wanted to have the default nav in mobile starting small
+    container.classList.remove('active');
+    toggle.addEventListener('click', () => {
+        container.classList.toggle('active')
+    }
+    )
+    //---------------------------------------
+    console.log('this is smaller than 500');
+} else {
+    nav.classList.remove('mobileNav')
+    nav.classList.remove('strethNav');
+}
+
+
