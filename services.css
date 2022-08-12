@@ -1,0 +1,100 @@
+body {
+  background-color: #f4f4f4;
+}
+.ratingCard {
+  background-color: hsl(213, 19%, 18%);
+  width: 320px;
+  height: 320px;
+  border-radius: 5%;
+  margin: 5rem auto 5rem;
+  padding: 1.5rem;
+}
+.svgFeedback {
+  margin-bottom: 1rem;
+  margin-top: 0.1rem;
+  margin-left: 9px;
+  border-style: hidden;
+  border-radius: 50%;
+  background-color: hsl(213, 19%, 25%);
+  width: 34px;
+  height: 34px;
+  position: static;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+.feedbackTitle {
+  color: hsl(0, 0%, 100%);
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+  margin-left: 9px;
+}
+.feedbackTitleAfterSubmit {
+  color: hsl(0, 0%, 100%);
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+  margin-left: 65px;
+}
+p {
+  font-size: 15px;
+  text-align: left;
+  color: hsl(217, 12%, 63%);
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  margin-left: 9px;
+}
+.rating {
+  color: hsl(217, 12%, 63%);
+  display: inline-flex;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  border-style: hidden;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  background-color: hsl(213, 19%, 25%);
+  position: static;
+  padding-left: 12px;
+  padding-top: 5px;
+}
+.btnFeedback {
+  background-color: hsl(25, 97%, 53%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-family: "Overpass", sans-serif;
+  padding: 5px 100px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-left: 9px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.finalFeedbackResult {
+  color: hsl(25, 97%, 53%);
+  display: none;
+  margin-left: 60px;
+}
+.hiddenFeedbackResult {
+  display: none;
+}
+.feedbackTextAfterSubmit {
+  margin-left: 65px;
+}
+.thanksImg {
+  display: none;
+  margin-bottom: 15px;
+  margin-left: 50px;
+}
+.finalFeedbackResult2 {
+  border-radius: 16px;
+  background-color: hsl(213, 19%, 25%);
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  color: hsl(25, 97%, 53%);
+}
+#feedbackCardText2 {
+  text-align: center;
+  margin-left: 15px;
+}
