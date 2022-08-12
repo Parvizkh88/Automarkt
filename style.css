@@ -463,6 +463,14 @@ aboutNav ul li i {
   font-size: 20px;
   margin-right: 10px;
 }
+aboutNav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  margin-left: 10px;
+  font-size: 15px;
+  padding: 0;
+}
 aboutNav ul li + li {
   margin-left: 15px;
   transform: translateX(-150%);
