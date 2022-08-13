@@ -28,10 +28,10 @@ countryInput.className = 'countryInput';
 carBrandInput.setAttribute('placeholder', 'Brand');
 carCylindersInput.setAttribute('placeholder', 'Cylinders');
 countryInput.setAttribute('placeholder', 'Country');
-mostSearchedDiv.className = 'mostSearchedDiv';
+mostSearchedDiv.classList.add('mostSearchedDiv', 'box');
 mostSearchedDiv.id = 'mostSearchedDiv';
 mostSearchedTitle.className = 'mostSearchedTitle';
-bestDealsDiv.className = 'bestDealsDiv';
+bestDealsDiv.classList.add('bestDealsDiv', 'box');
 bestDealsDiv.id = 'bestDealsDiv';
 bestDealsTitle.className = 'bestDealsTitle';
 bestDealsTitle.id = 'bestDealsTitleId';
@@ -42,6 +42,20 @@ advanceSearchButton.innerHTML = 'Advance search';
 advanceSearchTitle.innerHTML = 'Advance search';
 mostSearchedTitle.innerHTML = 'Most Searched';
 bestDealsTitle.innerHTML = 'Best Deals';
+
+let panels = document.querySelectorAll('.panel');
+panels.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        removeActiveClass()
+        panel.classList.add('panelActive')
+    })
+
+})
+function removeActiveClass() {
+    panels.forEach((panel) => {
+        panel.classList.remove('panelActive')
+    })
+}
 
 fetch('cars.json')
     .then(function (response) {
@@ -80,7 +94,7 @@ function appendData(data) {
 
         theButton.innerHTML = 'Details';
 
-        cards.className = 'cards';
+        cards.classList.add('cards', 'box', 'scrollBoxShow');
         card.id = `cardId${i}`;
         card.setAttribute('draggable', 'true');
         card.classList.add('card', 'draggable');
@@ -91,19 +105,16 @@ function appendData(data) {
 
         document.querySelector(`#cardId${i}`).addEventListener('dragstart', (e) => {
             e.dataTransfer.setData('gg', e.target.id)
-            console.log('dragstart!');
         })
         document.querySelector('.cards').addEventListener('dragover', (e) => {
             e.preventDefault();
-            console.log('dragover is happening!');
         })
         document.querySelector('.cards').addEventListener('drop', (e) => {
-            console.log(e.dataTransfer.getData('gg'));
             e.target.appendChild(document.getElementById(e.dataTransfer.getData('gg')));
         })
     }
-
 }
+
 let theTitle = document.createElement('h2');
 
 theTitle.innerHTML = 'All Cars';
@@ -118,18 +129,16 @@ document.body.appendChild(cards)
 document.body.append(mostSearchedDiv, bestDealsDiv);
 
 bestDealsTitle.setAttribute('draggable', 'true');
+
 document.getElementById('bestDealsTitleId').addEventListener('dragstart', (e) => {
-    console.log('dragstart is done!');
     e.dataTransfer.setData('myData', e.target.id);
 })
 
 document.querySelector('.mostSearchedDiv').addEventListener('dragover', (e) => {
-    console.log('dragover is done!');
     e.preventDefault();
 });
 
 document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
-    console.log('drop is done!');
     let myData2 = e.dataTransfer.getData('myData');
     e.target.appendChild(document.getElementById(myData2));
 })
@@ -169,18 +178,85 @@ document.querySelector('.filterButton').addEventListener('click', function () {
     searachDiv.style.display = 'none';
     advanceSearchDiv.style.display = 'block';
 })
-
 //The code below hides advanceSearchDiv when we minimize the size of the browser
 if (document.body.style.width < '800px') {
     advanceSearchDiv.style.display = 'none';
 }
+
 document.querySelector('.goToNormalSearch').addEventListener('click', function () {
     searachDiv.style.display = 'block';
     advanceSearchDiv.style.display = 'none';
 })
-const toggleButton = document.getElementsByClassName('toggle-button')[0];
-const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+//----------------------------------
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', fixNav);
 
-toggleButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
-})
+function fixNav() {
+
+    if (window.scrollY > nav.offsetHeight + 150) {
+        nav.classList.add('active')
+    } else {
+        nav.classList.remove('active')
+    }
+}
+//--------------------------
+const shortcutsLinks = document.querySelector('.shortcuts-links');
+window.addEventListener('scroll', shortcutCursor);
+
+function shortcutCursor() {
+    if (window.scrollY > 715) {
+        shortcutsLinks.style.zIndex = "-2";
+    }
+    else {
+        shortcutsLinks.style.zIndex = "1";
+    }
+}
+
+const carShowContainer = document.querySelector('.carShowContainer');
+window.addEventListener('scroll', panelCursor);
+function panelCursor() {
+    console.log(window.scrollY);
+    if (window.scrollY > 846) {
+        carShowContainer.style.zIndex = "-2";
+    } else {
+        carShowContainer.style.zIndex = "1";
+    }
+}
+//------------------------------
+var widerScreenWidth = window.matchMedia("(max-width: 501px)");
+var screenWidth = document.body.clientWidth;
+nav.classList.toggle('mobileNav');
+
+console.log(screenWidth);
+if (widerScreenWidth.matches) {
+    nav.classList.remove('nav');
+
+    const toggle = document.getElementById('toggle');
+    const container = document.getElementById('mobileNavId');
+    // The first line below was done because I wanted to have the default nav in mobile starting small
+    container.classList.remove('active');
+    toggle.addEventListener('click', () => {
+        container.classList.toggle('active')
+    }
+    )
+    // console.log('this is smaller than 500');
+} else {
+    nav.classList.remove('strethNav');
+}
+//-------------------------------------
+let boxes = document.querySelectorAll('.box');
+
+window.addEventListener('scroll', checkBoxes)
+checkBoxes()
+function checkBoxes() {
+    const triggerPoint = window.innerHeight / 5 * 4;
+
+    boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top
+        if (boxTop < triggerPoint) {
+            box.classList.add('scrollBoxShow')
+        } else {
+            box.classList.remove('scrollBoxShow')
+        }
+    })
+}
