@@ -87,10 +87,13 @@ function appendData(data) {
         let newOutput = '';
         for (let key in data[i]) {
             if (key === "Name" || key === "Origin" || key === "Cylinders") {
-                newOutput += key + ': ' + data[i][key] + '<br\>';
+                newOutput += key + ': ' + data[i][key] + "<br/>";
                 cardTitle.innerHTML = newOutput;
+                cardTitle.className = 'cardTitle'
             }
+            var searchableCarNames = newOutput.match("Name:(.*)<br/>Cylinders");
         }
+        console.log(searchableCarNames[1]);
 
         theButton.innerHTML = 'Details';
 
@@ -144,10 +147,11 @@ document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
 })
 
 document.querySelector('.input1').addEventListener('keyup', function () {
-    let list1 = document.querySelectorAll('.card-title');
+    let list1 = document.querySelectorAll('.cardTitle');
     let list2 = document.querySelectorAll('.card');
     if (list1) {
         for (let i = 0; i < list1.length; i++) {
+
             if (list1[i].textContent.toLowerCase().indexOf(searachInput.value.toLowerCase()) == -1) {
                 list2[i].style.display = 'none';
             }
@@ -159,7 +163,7 @@ document.querySelector('.input1').addEventListener('keyup', function () {
 });
 
 document.querySelector('.advanceSearchButton').addEventListener('click', function () {
-    let list3 = document.querySelectorAll('.card-title');
+    let list3 = document.querySelectorAll('.cardTitle');
     let list4 = document.querySelectorAll('.card');
     let list5 = document.querySelectorAll('.card-cylinders');
     if (list3) {
@@ -215,7 +219,7 @@ function shortcutCursor() {
 const carShowContainer = document.querySelector('.carShowContainer');
 window.addEventListener('scroll', panelCursor);
 function panelCursor() {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY > 846) {
         carShowContainer.style.zIndex = "-2";
     } else {
@@ -227,7 +231,7 @@ var widerScreenWidth = window.matchMedia("(max-width: 501px)");
 var screenWidth = document.body.clientWidth;
 nav.classList.toggle('mobileNav');
 
-console.log(screenWidth);
+// console.log(screenWidth);
 if (widerScreenWidth.matches) {
     nav.classList.remove('nav');
 
