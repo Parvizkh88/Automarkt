@@ -73,6 +73,7 @@ function detailPop(x) {
     for (let key in x) {
         detailOutput += key + ': ' + x[key] + '\n';
     }
+    console.log(detailOutput);
     alert(detailOutput)
 };
 
@@ -80,9 +81,12 @@ function appendData(data) {
     for (let i = 0; i < data.length; i++) {
         var card = document.createElement('div');
         var cardTitle = document.createElement('h5');
-        var theButton = document.createElement('BUTTON');
+        var theButton = document.createElement('button');
+
         theButton.addEventListener('click', function () {
             detailPop(data[i])
+            // console.log('hiiii');
+            console.log(theButton);
         })
         let newOutput = '';
         for (let key in data[i]) {
@@ -91,9 +95,9 @@ function appendData(data) {
                 cardTitle.innerHTML = newOutput;
                 cardTitle.className = 'cardTitle'
             }
-            var searchableCarNames = newOutput.match("Name:(.*)<br/>Cylinders");
+            // var searchableCarNames = newOutput.match("Name:(.*)<br/>Cylinders");
         }
-        console.log(searchableCarNames[1]);
+        // console.log(searchableCarNames[1]);
 
         theButton.innerHTML = 'Details';
 
@@ -147,12 +151,18 @@ document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
 })
 
 document.querySelector('.input1').addEventListener('keyup', function () {
+
     let list1 = document.querySelectorAll('.cardTitle');
     let list2 = document.querySelectorAll('.card');
     if (list1) {
         for (let i = 0; i < list1.length; i++) {
-
-            if (list1[i].textContent.toLowerCase().indexOf(searachInput.value.toLowerCase()) == -1) {
+            var myList1 = list1[i].textContent;
+            var brs = myList1.split(":");
+            // console.log(myList1);
+            var brs2 = brs[1].split('C');
+            // console.log(brs2[0]);
+            // console.log(brs[1]);
+            if (brs2[0].toLowerCase().indexOf(searachInput.value.toLowerCase()) == -1) {
                 list2[i].style.display = 'none';
             }
             else {
@@ -165,11 +175,19 @@ document.querySelector('.input1').addEventListener('keyup', function () {
 document.querySelector('.advanceSearchButton').addEventListener('click', function () {
     let list3 = document.querySelectorAll('.cardTitle');
     let list4 = document.querySelectorAll('.card');
-    let list5 = document.querySelectorAll('.card-cylinders');
+    // let list5 = document.querySelectorAll('.card-cylinders');
     if (list3) {
         for (let i = 0; i < list3.length; i++) {
-            if (list3[i].textContent.toLowerCase().indexOf(carBrandInput.value.toLowerCase()) !== -1
-                && list5[i].textContent.toLowerCase().indexOf(carCylindersInput.value.toLowerCase()) !== -1) {
+            var myList1 = list3[i].textContent;
+            let brs = myList1.split(":");
+            let brs2 = brs[1].split('C');
+            let brs3 = brs[2].split('O');
+            let brs4 = brs[3];
+            // console.log(brs[3]);
+            if (brs2[0].toLowerCase().indexOf(carBrandInput.value.toLowerCase()) !== -1 &&
+                brs3[0].toLowerCase().indexOf(carCylindersInput.value.toLowerCase()) !== -1 &&
+                brs4.toLowerCase().indexOf(countryInput.value.toLowerCase()) !== -1
+            ) {
                 list4[i].style.display = 'block';
             } else {
                 list4[i].style.display = 'none';
