@@ -85,7 +85,6 @@ function appendData(data) {
 
         theButton.addEventListener('click', function () {
             detailPop(data[i])
-            // console.log('hiiii');
             console.log(theButton);
         })
         let newOutput = '';
@@ -95,9 +94,7 @@ function appendData(data) {
                 cardTitle.innerHTML = newOutput;
                 cardTitle.className = 'cardTitle'
             }
-            // var searchableCarNames = newOutput.match("Name:(.*)<br/>Cylinders");
         }
-        // console.log(searchableCarNames[1]);
 
         theButton.innerHTML = 'Details';
 
@@ -158,10 +155,8 @@ document.querySelector('.input1').addEventListener('keyup', function () {
         for (let i = 0; i < list1.length; i++) {
             var myList1 = list1[i].textContent;
             var brs = myList1.split(":");
-            // console.log(myList1);
             var brs2 = brs[1].split('C');
-            // console.log(brs2[0]);
-            // console.log(brs[1]);
+
             if (brs2[0].toLowerCase().indexOf(searachInput.value.toLowerCase()) == -1) {
                 list2[i].style.display = 'none';
             }
@@ -175,7 +170,6 @@ document.querySelector('.input1').addEventListener('keyup', function () {
 document.querySelector('.advanceSearchButton').addEventListener('click', function () {
     let list3 = document.querySelectorAll('.cardTitle');
     let list4 = document.querySelectorAll('.card');
-    // let list5 = document.querySelectorAll('.card-cylinders');
     if (list3) {
         for (let i = 0; i < list3.length; i++) {
             var myList1 = list3[i].textContent;
@@ -183,7 +177,6 @@ document.querySelector('.advanceSearchButton').addEventListener('click', functio
             let brs2 = brs[1].split('C');
             let brs3 = brs[2].split('O');
             let brs4 = brs[3];
-            // console.log(brs[3]);
             if (brs2[0].toLowerCase().indexOf(carBrandInput.value.toLowerCase()) !== -1 &&
                 brs3[0].toLowerCase().indexOf(carCylindersInput.value.toLowerCase()) !== -1 &&
                 brs4.toLowerCase().indexOf(countryInput.value.toLowerCase()) !== -1
@@ -209,7 +202,7 @@ document.querySelector('.goToNormalSearch').addEventListener('click', function (
     searachDiv.style.display = 'block';
     advanceSearchDiv.style.display = 'none';
 })
-//----------------------------------
+
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', fixNav);
 
@@ -221,12 +214,21 @@ function fixNav() {
         nav.classList.remove('active')
     }
 }
-//--------------------------
+
+window.addEventListener('scroll', navHide);
+function navHide() {
+    if (window.scrollY > 1395) {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'block';;
+    }
+}
 const shortcutsLinks = document.querySelector('.shortcuts-links');
 window.addEventListener('scroll', shortcutCursor);
 
 function shortcutCursor() {
     if (window.scrollY > 715) {
+        console.log(window.scrollY);
         shortcutsLinks.style.zIndex = "-2";
     }
     else {
@@ -237,19 +239,17 @@ function shortcutCursor() {
 const carShowContainer = document.querySelector('.carShowContainer');
 window.addEventListener('scroll', panelCursor);
 function panelCursor() {
-    // console.log(window.scrollY);
     if (window.scrollY > 846) {
         carShowContainer.style.zIndex = "-2";
     } else {
         carShowContainer.style.zIndex = "1";
     }
 }
-//------------------------------
+
 var widerScreenWidth = window.matchMedia("(max-width: 501px)");
 var screenWidth = document.body.clientWidth;
 nav.classList.toggle('mobileNav');
 
-// console.log(screenWidth);
 if (widerScreenWidth.matches) {
     nav.classList.remove('nav');
 
@@ -261,11 +261,10 @@ if (widerScreenWidth.matches) {
         container.classList.toggle('active')
     }
     )
-    // console.log('this is smaller than 500');
 } else {
     nav.classList.remove('strethNav');
 }
-//-------------------------------------
+
 let boxes = document.querySelectorAll('.box');
 
 window.addEventListener('scroll', checkBoxes)
