@@ -35,15 +35,22 @@ p {
   width: 18rem;
 }
 .input1 {
-  border-radius: 5%;
+  border-radius: 5px;
   margin-bottom: 1rem;
+  padding: 4px 0;
 }
 .searachDiv {
+  background-color: #fff;
+  margin: 4rem auto;
+  padding-top: 30px;
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
   text-align: center;
-  margin: 4rem;
 }
 .advanceSearchDiv {
-  background-color: burlywood;
+  background-color: #fff;
   display: none;
   width: 800px;
   height: 150px;
@@ -51,6 +58,12 @@ p {
   margin: 2rem auto 2rem;
   padding-left: 1.5rem;
   position: relative;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
+}
+.advanceSearchButton,
+.filterButton {
+  margin-bottom: 4px;
 }
 .advanceSearchTitle {
   position: relative;
@@ -133,6 +146,12 @@ p {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
+.carBrandInput,
+.carCylindersInput,
+.countryInput {
+  padding: 4px 0;
+  border-radius: 5px;
+}
 @media (max-width: 600px) {
   .carShowContainer {
     width: 100vw;
@@ -161,7 +180,7 @@ p {
     display: block;
   }
   .advanceSearchDiv {
-    background-color: burlywood;
+    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -169,7 +188,7 @@ p {
     height: auto;
     align-content: center;
     margin: 12rem 5rem 5rem 5rem;
-    padding-left: 1.5rem;
+    padding-left: 3rem;
   }
 }
 @media (max-width: 550px) {
@@ -177,6 +196,7 @@ p {
   .carCylindersInput,
   .countryInput {
     width: 74%;
+    padding: 7px;
   }
 }
 .mostSearchedDiv {
