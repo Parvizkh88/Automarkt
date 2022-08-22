@@ -10,8 +10,6 @@ let countryInput = document.createElement('input');
 let advanceSearchButton = document.createElement('Button');
 let mostSearchedDiv = document.createElement('div');
 let bestDealsDiv = document.createElement('div');
-// let mostSearchedTitle = document.createElement('h2');
-let bestDealsTitle = document.createElement('h2');
 var cards = document.createElement('div');
 
 searachDiv.className = 'searachDiv';
@@ -30,18 +28,13 @@ carCylindersInput.setAttribute('placeholder', 'Cylinders');
 countryInput.setAttribute('placeholder', 'Country');
 mostSearchedDiv.classList.add('mostSearchedDiv', 'box');
 mostSearchedDiv.id = 'mostSearchedDiv';
-// mostSearchedTitle.className = 'mostSearchedTitle';
 bestDealsDiv.classList.add('bestDealsDiv', 'box');
 bestDealsDiv.id = 'bestDealsDiv';
-bestDealsTitle.className = 'bestDealsTitle';
-bestDealsTitle.id = 'bestDealsTitleId';
 
 filterButton.innerHTML = 'filters';
 goToNormalSearch.innerHTML = 'Normal Search';
 advanceSearchButton.innerHTML = 'Advance search';
 advanceSearchTitle.innerHTML = 'Advance search';
-// mostSearchedTitle.innerHTML = 'Most Searched';
-bestDealsTitle.innerHTML = 'Best Deals';
 
 let panels = document.querySelectorAll('.panel');
 panels.forEach((panel) => {
@@ -124,35 +117,36 @@ let theTitle = document.createElement('h2');
 theTitle.innerHTML = 'All Cars';
 
 let carouselExampleCaptions = document.querySelector('#carouselExampleCaptions');
-let newMostSearched = document.querySelector('.newMostSearched');
-
-newMostSearched.className = 'newMostSearched';
+let carouselExampleCaptions2 = document.querySelector('#carouselExampleCaptions2');
+let MostSearchedTitle = document.querySelector('.MostSearchedTitle');
+let bestDealsTitle = document.querySelector('.bestDealsTitle');
 
 //---------------------------------------------
 searachDiv.append(searachInput, filterButton);
 advanceSearchDiv.append(advanceSearchTitle, carBrandInput, carCylindersInput,
     countryInput, advanceSearchButton, goToNormalSearch);
 mostSearchedDiv.appendChild(carouselExampleCaptions);
-bestDealsDiv.appendChild(bestDealsTitle);
+bestDealsDiv.appendChild(carouselExampleCaptions2);
 document.body.append(searachDiv, advanceSearchDiv, theTitle);
 document.body.appendChild(cards)
-document.body.append(newMostSearched, mostSearchedDiv, bestDealsDiv);
+document.body.append(MostSearchedTitle, mostSearchedDiv, bestDealsTitle, bestDealsDiv);
+//I deactivated the title drag and drop feature
+//--------------------------------------------------------------
+// bestDealsTitle.setAttribute('draggable', 'true');
 
-bestDealsTitle.setAttribute('draggable', 'true');
+// document.getElementById('bestDealsTitleId').addEventListener('dragstart', (e) => {
+//     e.dataTransfer.setData('myData', e.target.id);
+// })
 
-document.getElementById('bestDealsTitleId').addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('myData', e.target.id);
-})
+// document.querySelector('.mostSearchedDiv').addEventListener('dragover', (e) => {
+//     e.preventDefault();
+// });
 
-document.querySelector('.mostSearchedDiv').addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
-
-document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
-    let myData2 = e.dataTransfer.getData('myData');
-    e.target.appendChild(document.getElementById(myData2));
-})
-
+// document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
+//     let myData2 = e.dataTransfer.getData('myData');
+//     e.target.appendChild(document.getElementById(myData2));
+// })
+//--------------------------------------------------------------
 document.querySelector('.input1').addEventListener('keyup', function () {
 
     let list1 = document.querySelectorAll('.cardTitle');
