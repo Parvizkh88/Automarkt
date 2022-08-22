@@ -1,6 +1,3 @@
-// var myCarousel = document.querySelector('#myCarousel')
-// var carousel = new bootstrap.Carousel(myCarousel)
-
 let searachDiv = document.createElement('div');
 let searachInput = document.createElement('input');
 let advanceSearchDiv = document.createElement('div');
@@ -13,7 +10,7 @@ let countryInput = document.createElement('input');
 let advanceSearchButton = document.createElement('Button');
 let mostSearchedDiv = document.createElement('div');
 let bestDealsDiv = document.createElement('div');
-let mostSearchedTitle = document.createElement('h2');
+// let mostSearchedTitle = document.createElement('h2');
 let bestDealsTitle = document.createElement('h2');
 var cards = document.createElement('div');
 
@@ -33,7 +30,7 @@ carCylindersInput.setAttribute('placeholder', 'Cylinders');
 countryInput.setAttribute('placeholder', 'Country');
 mostSearchedDiv.classList.add('mostSearchedDiv', 'box');
 mostSearchedDiv.id = 'mostSearchedDiv';
-mostSearchedTitle.className = 'mostSearchedTitle';
+// mostSearchedTitle.className = 'mostSearchedTitle';
 bestDealsDiv.classList.add('bestDealsDiv', 'box');
 bestDealsDiv.id = 'bestDealsDiv';
 bestDealsTitle.className = 'bestDealsTitle';
@@ -125,27 +122,21 @@ function appendData(data) {
 let theTitle = document.createElement('h2');
 
 theTitle.innerHTML = 'All Cars';
-//-----------------------------------------
-// let carousel = document.querySelector('.carousel');
-// let carouselItem = document.querySelector('.carousel-item');
+
 let carouselExampleCaptions = document.querySelector('#carouselExampleCaptions');
-// let carouselContainer = document.querySelector('.carouselContainer');
+let newMostSearched = document.querySelector('.newMostSearched');
 
+newMostSearched.className = 'newMostSearched';
 
-// let ooo = document.querySelector('.ooo');
-// let ppp = document.querySelector('.ppp');
-// let carouseCaption = document.querySelector('.carousel-caption');
-// let carouselImg = document.querySelector('.carouselImg');
 //---------------------------------------------
 searachDiv.append(searachInput, filterButton);
 advanceSearchDiv.append(advanceSearchTitle, carBrandInput, carCylindersInput,
     countryInput, advanceSearchButton, goToNormalSearch);
-mostSearchedDiv.append(mostSearchedTitle, carouselExampleCaptions);
+mostSearchedDiv.appendChild(carouselExampleCaptions);
 bestDealsDiv.appendChild(bestDealsTitle);
 document.body.append(searachDiv, advanceSearchDiv, theTitle);
 document.body.appendChild(cards)
-document.body.append(mostSearchedDiv, bestDealsDiv);
-// carousel.append(carouseCaption, carouselItem, carouselImg, ooo, ppp)
+document.body.append(newMostSearched, mostSearchedDiv, bestDealsDiv);
 
 bestDealsTitle.setAttribute('draggable', 'true');
 
@@ -243,7 +234,7 @@ window.addEventListener('scroll', shortcutCursor);
 
 function shortcutCursor() {
     if (window.scrollY > 715) {
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
         shortcutsLinks.style.zIndex = "-2";
     }
     else {
