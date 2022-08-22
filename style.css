@@ -200,12 +200,12 @@ p {
   }
 }
 .mostSearchedDiv {
-  padding: 3rem;
-  height: 500px;
+  padding: 1.5rem;
+  height: 850px;
   margin: 50px 50px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%);
+  /* background-color: #fff; */
+  /* border-radius: 10px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 25%); */
 }
 .bestDealsDiv {
   padding: 3rem;
@@ -519,4 +519,15 @@ aboutNav ul li + li + li {
   font-family: "Lato", sans-serif;
   margin-bottom: 15px;
   margin-top: 15px;
+}
+#carouselExampleCaptions {
+  height: 850px;
+  width: 1200px;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0px auto;
+}
+.carousel-item p {
+  color: #fff;
+  opacity: 0.5;
 }
