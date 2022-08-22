@@ -120,6 +120,7 @@ let carouselExampleCaptions = document.querySelector('#carouselExampleCaptions')
 let carouselExampleCaptions2 = document.querySelector('#carouselExampleCaptions2');
 let MostSearchedTitle = document.querySelector('.MostSearchedTitle');
 let bestDealsTitle = document.querySelector('.bestDealsTitle');
+let footer = document.querySelector('.footer');
 
 //---------------------------------------------
 searachDiv.append(searachInput, filterButton);
@@ -129,7 +130,7 @@ mostSearchedDiv.appendChild(carouselExampleCaptions);
 bestDealsDiv.appendChild(carouselExampleCaptions2);
 document.body.append(searachDiv, advanceSearchDiv, theTitle);
 document.body.appendChild(cards)
-document.body.append(MostSearchedTitle, mostSearchedDiv, bestDealsTitle, bestDealsDiv);
+document.body.append(MostSearchedTitle, mostSearchedDiv, bestDealsTitle, bestDealsDiv, footer);
 //I deactivated the title drag and drop feature
 //--------------------------------------------------------------
 // bestDealsTitle.setAttribute('draggable', 'true');
