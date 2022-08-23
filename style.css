@@ -18,6 +18,9 @@ p {
   color: gray;
   font-family: sans-serif;
 }
+.theTitle {
+  text-align: center;
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

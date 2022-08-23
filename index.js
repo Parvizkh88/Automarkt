@@ -113,7 +113,7 @@ function appendData(data) {
 }
 
 let theTitle = document.createElement('h2');
-
+theTitle.className = 'theTitle'
 theTitle.innerHTML = 'All Cars';
 
 let carouselExampleCaptions = document.querySelector('#carouselExampleCaptions');
