@@ -1,6 +1,6 @@
 [
    {
-      "Name":"chevrolet chevelle malibu",
+      "Name":"chevrolet malibu",
       "Miles_per_Gallon":18,
       "Cylinders":8,
       "Displacement":307,
@@ -121,7 +121,7 @@
       "Origin":"France"
    },
    {
-      "Name":"chevrolet chevelle concours (sw)",
+      "Name":"chevrolet concours",
       "Miles_per_Gallon":null,
       "Cylinders":8,
       "Displacement":350,

@@ -10,16 +10,14 @@ let countryInput = document.createElement('input');
 let advanceSearchButton = document.createElement('Button');
 let mostSearchedDiv = document.createElement('div');
 let bestDealsDiv = document.createElement('div');
-let mostSearchedTitle = document.createElement('h2');
-let bestDealsTitle = document.createElement('h2');
 var cards = document.createElement('div');
 
 searachDiv.className = 'searachDiv';
 searachInput.className = 'input1';
 advanceSearchDiv.className = 'advanceSearchDiv';
-filterButton.className = 'filterButton';
-goToNormalSearch.className = 'goToNormalSearch';
-advanceSearchButton.className = 'advanceSearchButton';
+filterButton.classList.add('filterButton', 'btn', 'btn-primary');
+goToNormalSearch.classList.add('goToNormalSearch', 'btn', 'btn-primary');
+advanceSearchButton.classList.add('advanceSearchButton', 'btn', 'btn-primary');
 advanceSearchTitle.className = 'advanceSearchTitle';
 searachInput.setAttribute('placeholder', 'serach cars');
 carBrandInput.className = 'carBrandInput';
@@ -30,18 +28,13 @@ carCylindersInput.setAttribute('placeholder', 'Cylinders');
 countryInput.setAttribute('placeholder', 'Country');
 mostSearchedDiv.classList.add('mostSearchedDiv', 'box');
 mostSearchedDiv.id = 'mostSearchedDiv';
-mostSearchedTitle.className = 'mostSearchedTitle';
 bestDealsDiv.classList.add('bestDealsDiv', 'box');
 bestDealsDiv.id = 'bestDealsDiv';
-bestDealsTitle.className = 'bestDealsTitle';
-bestDealsTitle.id = 'bestDealsTitleId';
 
 filterButton.innerHTML = 'filters';
 goToNormalSearch.innerHTML = 'Normal Search';
 advanceSearchButton.innerHTML = 'Advance search';
 advanceSearchTitle.innerHTML = 'Advance search';
-mostSearchedTitle.innerHTML = 'Most Searched';
-bestDealsTitle.innerHTML = 'Best Deals';
 
 let panels = document.querySelectorAll('.panel');
 panels.forEach((panel) => {
@@ -73,6 +66,7 @@ function detailPop(x) {
     for (let key in x) {
         detailOutput += key + ': ' + x[key] + '\n';
     }
+    console.log(detailOutput);
     alert(detailOutput)
 };
 
@@ -80,15 +74,18 @@ function appendData(data) {
     for (let i = 0; i < data.length; i++) {
         var card = document.createElement('div');
         var cardTitle = document.createElement('h5');
-        var theButton = document.createElement('BUTTON');
+        var theButton = document.createElement('button');
+
         theButton.addEventListener('click', function () {
             detailPop(data[i])
+            console.log(theButton);
         })
         let newOutput = '';
         for (let key in data[i]) {
             if (key === "Name" || key === "Origin" || key === "Cylinders") {
-                newOutput += key + ': ' + data[i][key] + '<br\>';
+                newOutput += key + ': ' + data[i][key] + "<br/>";
                 cardTitle.innerHTML = newOutput;
+                cardTitle.className = 'cardTitle'
             }
         }
 
@@ -116,39 +113,52 @@ function appendData(data) {
 }
 
 let theTitle = document.createElement('h2');
-
+theTitle.className = 'theTitle'
 theTitle.innerHTML = 'All Cars';
 
+let carouselExampleCaptions = document.querySelector('#carouselExampleCaptions');
+let carouselExampleCaptions2 = document.querySelector('#carouselExampleCaptions2');
+let MostSearchedTitle = document.querySelector('.MostSearchedTitle');
+let bestDealsTitle = document.querySelector('.bestDealsTitle');
+let footer = document.querySelector('.footer');
+
+//---------------------------------------------
 searachDiv.append(searachInput, filterButton);
 advanceSearchDiv.append(advanceSearchTitle, carBrandInput, carCylindersInput,
     countryInput, advanceSearchButton, goToNormalSearch);
-mostSearchedDiv.appendChild(mostSearchedTitle);
-bestDealsDiv.appendChild(bestDealsTitle);
+mostSearchedDiv.appendChild(carouselExampleCaptions);
+bestDealsDiv.appendChild(carouselExampleCaptions2);
 document.body.append(searachDiv, advanceSearchDiv, theTitle);
 document.body.appendChild(cards)
-document.body.append(mostSearchedDiv, bestDealsDiv);
+document.body.append(MostSearchedTitle, mostSearchedDiv, bestDealsTitle, bestDealsDiv, footer);
+//I deactivated the title drag and drop feature
+//--------------------------------------------------------------
+// bestDealsTitle.setAttribute('draggable', 'true');
 
-bestDealsTitle.setAttribute('draggable', 'true');
+// document.getElementById('bestDealsTitleId').addEventListener('dragstart', (e) => {
+//     e.dataTransfer.setData('myData', e.target.id);
+// })
 
-document.getElementById('bestDealsTitleId').addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('myData', e.target.id);
-})
+// document.querySelector('.mostSearchedDiv').addEventListener('dragover', (e) => {
+//     e.preventDefault();
+// });
 
-document.querySelector('.mostSearchedDiv').addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
-
-document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
-    let myData2 = e.dataTransfer.getData('myData');
-    e.target.appendChild(document.getElementById(myData2));
-})
-
+// document.querySelector('.mostSearchedDiv').addEventListener('drop', (e) => {
+//     let myData2 = e.dataTransfer.getData('myData');
+//     e.target.appendChild(document.getElementById(myData2));
+// })
+//--------------------------------------------------------------
 document.querySelector('.input1').addEventListener('keyup', function () {
-    let list1 = document.querySelectorAll('.card-title');
+
+    let list1 = document.querySelectorAll('.cardTitle');
     let list2 = document.querySelectorAll('.card');
     if (list1) {
         for (let i = 0; i < list1.length; i++) {
-            if (list1[i].textContent.toLowerCase().indexOf(searachInput.value.toLowerCase()) == -1) {
+            var myList1 = list1[i].textContent;
+            var brs = myList1.split(":");
+            var brs2 = brs[1].split('C');
+
+            if (brs2[0].toLowerCase().indexOf(searachInput.value.toLowerCase()) == -1) {
                 list2[i].style.display = 'none';
             }
             else {
@@ -159,13 +169,19 @@ document.querySelector('.input1').addEventListener('keyup', function () {
 });
 
 document.querySelector('.advanceSearchButton').addEventListener('click', function () {
-    let list3 = document.querySelectorAll('.card-title');
+    let list3 = document.querySelectorAll('.cardTitle');
     let list4 = document.querySelectorAll('.card');
-    let list5 = document.querySelectorAll('.card-cylinders');
     if (list3) {
         for (let i = 0; i < list3.length; i++) {
-            if (list3[i].textContent.toLowerCase().indexOf(carBrandInput.value.toLowerCase()) !== -1
-                && list5[i].textContent.toLowerCase().indexOf(carCylindersInput.value.toLowerCase()) !== -1) {
+            var myList1 = list3[i].textContent;
+            let brs = myList1.split(":");
+            let brs2 = brs[1].split('C');
+            let brs3 = brs[2].split('O');
+            let brs4 = brs[3];
+            if (brs2[0].toLowerCase().indexOf(carBrandInput.value.toLowerCase()) !== -1 &&
+                brs3[0].toLowerCase().indexOf(carCylindersInput.value.toLowerCase()) !== -1 &&
+                brs4.toLowerCase().indexOf(countryInput.value.toLowerCase()) !== -1
+            ) {
                 list4[i].style.display = 'block';
             } else {
                 list4[i].style.display = 'none';
@@ -187,7 +203,7 @@ document.querySelector('.goToNormalSearch').addEventListener('click', function (
     searachDiv.style.display = 'block';
     advanceSearchDiv.style.display = 'none';
 })
-//----------------------------------
+
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', fixNav);
 
@@ -199,12 +215,21 @@ function fixNav() {
         nav.classList.remove('active')
     }
 }
-//--------------------------
+
+window.addEventListener('scroll', navHide);
+function navHide() {
+    if (window.scrollY > 1395) {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'block';;
+    }
+}
 const shortcutsLinks = document.querySelector('.shortcuts-links');
 window.addEventListener('scroll', shortcutCursor);
 
 function shortcutCursor() {
     if (window.scrollY > 715) {
+        // console.log(window.scrollY);
         shortcutsLinks.style.zIndex = "-2";
     }
     else {
@@ -215,19 +240,17 @@ function shortcutCursor() {
 const carShowContainer = document.querySelector('.carShowContainer');
 window.addEventListener('scroll', panelCursor);
 function panelCursor() {
-    console.log(window.scrollY);
     if (window.scrollY > 846) {
         carShowContainer.style.zIndex = "-2";
     } else {
         carShowContainer.style.zIndex = "1";
     }
 }
-//------------------------------
+
 var widerScreenWidth = window.matchMedia("(max-width: 501px)");
 var screenWidth = document.body.clientWidth;
 nav.classList.toggle('mobileNav');
 
-console.log(screenWidth);
 if (widerScreenWidth.matches) {
     nav.classList.remove('nav');
 
@@ -239,11 +262,10 @@ if (widerScreenWidth.matches) {
         container.classList.toggle('active')
     }
     )
-    // console.log('this is smaller than 500');
 } else {
     nav.classList.remove('strethNav');
 }
-//-------------------------------------
+
 let boxes = document.querySelectorAll('.box');
 
 window.addEventListener('scroll', checkBoxes)

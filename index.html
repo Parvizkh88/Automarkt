@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
     <nav class="nav mobileNav strethNav">
@@ -46,10 +48,10 @@
                 <a class="shortcuts-link" href="#cards">All Cars</a>
             </li>
             <li>
-                <a class="shortcuts-link" href="#mostSearchedDiv">Most Searched</a>
+                <a class="shortcuts-link" href="#MostSearchedTitle">Most Searched</a>
             </li>
             <li>
-                <a class="shortcuts-link" href="#bestDealsDiv">Best Deals</a>
+                <a class="shortcuts-link" href="#bestDealsTitle">Best Deals</a>
             </li>
         </ul>
     </div>
@@ -79,6 +81,143 @@
             <h3>Chevrolet Cruze</h3>
         </div>
     </div>
+    <h2 class="MostSearchedTitle" id="MostSearchedTitle">Most Searched</h2>
+    <!-- -------------------------------------------------------------------- -->
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./images/Jeep.jpg" class="d-block w-100 rounded-2" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Jeep</h5>
+                    <p>The real offroad car. This is one of the best ever made.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/Opel.jpg" class="d-block w-100 rounded-2" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Opel</h5>
+                    <p>Beautiful and modern design are two characteristics of this car.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/VW Golf.jpg" class="d-block w-100 rounded-2" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>VW Golf</h5>
+                    <p>One of the best Hatchback cars in the world. Very popular in Germany.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- ---------------------------------------------- -->
+    <h2 class="bestDealsTitle" id="bestDealsTitle">Best Deals</h2>
+
+
+    <div id="carouselExampleCaptions2" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./images/Kia Optima.jpg" class="d-block w-100 rounded-2" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Kia Optima </h5>
+                    <p>€23500</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/Renault Megane 5.jpg" class="d-block w-100 rounded-2" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Renault Megane 5</h5>
+                    <p>€17.500.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/Range Rover Sport.jpg" class="d-block w-100 rounded-2" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Range Rover Sport</h5>
+                    <p>€18900</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions2"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions2"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <footer class="footer">
+        <div class="footerContainer">
+            <div class="footerRow">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul class="footerUl">
+                        <li><a href="#">about Automarkt</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">contact</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul class="footerUl">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">career</a></li>
+                        <li><a href="#">order status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul class="footerUl">
+                        <li><a href="#">New Car</a></li>
+                        <li><a href="#">Used Car</a></li>
+                        <li><a href="#">Your contract</a></li>
+                        <li><a href="#">returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
