@@ -1,4 +1,28 @@
 [
+      {
+      "Name":"Nissan Murano",
+      "Miles_per_Gallon":25,
+      "Cylinders":8,
+      "Displacement":400,
+      "Horsepower":600,
+      "Weight_in_lbs":3761,
+      "Acceleration":3.5,
+      "Year":"2012-01-01",
+      "Origin":"Japan",
+"image": "/images/Nissan Murano.jpg"
+   },
+   {
+      "Name":"BMW X5",
+      "Miles_per_Gallon":14,
+      "Cylinders":8,
+      "Displacement":455,
+      "Horsepower":225,
+      "Weight_in_lbs":3086,
+      "Acceleration":6,
+      "Year":"1970-01-01",
+      "Origin":"Germany",
+"image": "/images/BMW X5.jpg"
+   }, 
    {
       "Name":"chevrolet malibu",
       "Miles_per_Gallon":18,
@@ -8,7 +32,9 @@
       "Weight_in_lbs":3504,
       "Acceleration":12,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"USA",
+      "image": "/images/chevrolet malibu.jpg",
+      "alt":"German sport car"
    },
    {
       "Name":"buick skylark 320",
@@ -19,7 +45,32 @@
       "Weight_in_lbs":3693,
       "Acceleration":11.5,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"USA",
+      "image": "/images/buick skylark 320.jpg"
+   },
+      {
+      "Name":"dodge challenger se",
+      "Miles_per_Gallon":15,
+      "Cylinders":8,
+      "Displacement":383,
+      "Horsepower":170,
+      "Weight_in_lbs":3563,
+      "Acceleration":10,
+      "Year":"1970-01-01",
+      "Origin":"USA",
+"image": "/images/dodge challenger se.jpg"
+   },
+   {
+      "Name":"Mclaren F1",
+      "Miles_per_Gallon":14,
+      "Cylinders":12,
+      "Displacement":340,
+      "Horsepower":610,
+      "Weight_in_lbs":2000,
+      "Acceleration":3.2,
+      "Year":"1970-01-01",
+      "Origin":"UK",
+"image": "/images/Mclaren F1.jpg"
    },
    {
       "Name":"Peugeot 208",
@@ -30,7 +81,8 @@
       "Weight_in_lbs":3436,
       "Acceleration":11,
       "Year":"1970-01-01",
-      "Origin":"France"
+      "Origin":"France",
+"image": "/images/Peugeot 208.jpg"
    },
    {
       "Name":"Audi S3",
@@ -41,7 +93,8 @@
       "Weight_in_lbs":3433,
       "Acceleration":4,
       "Year":"1970-01-01",
-      "Origin":"Germany"
+      "Origin":"Germany",
+"image": "/images/Audi S3.jpg"
    },
    {
       "Name":"BMW M3",
@@ -52,7 +105,8 @@
       "Weight_in_lbs":3449,
       "Acceleration":10.5,
       "Year":"1970-01-01",
-      "Origin":"Germany"
+      "Origin":"Germany",
+            "image": "/images/BMW M3.jpg"
    },
    {
       "Name":"ford galaxie 500",
@@ -63,7 +117,8 @@
       "Weight_in_lbs":4341,
       "Acceleration":10,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"USA",
+      "image": "/images/ford galaxie 500.jpg"
    },
    {
       "Name":"chevrolet impala",
@@ -74,7 +129,8 @@
       "Weight_in_lbs":4354,
       "Acceleration":9,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"USA",
+"image": "/images/chevrolet impala.jpg"
    },
    {
       "Name":"Nissan Juke",
@@ -85,7 +141,8 @@
       "Weight_in_lbs":4312,
       "Acceleration":8.5,
       "Year":"2000-01-01",
-      "Origin":"Japan"
+      "Origin":"Japan",
+"image": "/images/Nissan Juke.jpg"
    },
    {
       "Name":"pontiac catalina",
@@ -96,7 +153,8 @@
       "Weight_in_lbs":4425,
       "Acceleration":10,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"USA",
+"image": "/images/pontiac catalina.jpg"
    },
    {
       "Name":"amc ambassador dpl",
@@ -107,7 +165,8 @@
       "Weight_in_lbs":3850,
       "Acceleration":8.5,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"USA",
+"image": "/images/amc ambassador dpl.jpg"
    },
    {
       "Name":"citroen ds-21 pallas",
@@ -118,29 +177,32 @@
       "Weight_in_lbs":3090,
       "Acceleration":17.5,
       "Year":"1970-01-01",
-      "Origin":"France"
+      "Origin":"France",
+"image": "/images/citroen ds-21 pallas.jpg"
    },
    {
-      "Name":"chevrolet concours",
+      "Name":"Range Rover SV",
       "Miles_per_Gallon":null,
-      "Cylinders":8,
+      "Cylinders":12,
       "Displacement":350,
-      "Horsepower":165,
+      "Horsepower":650,
       "Weight_in_lbs":4142,
-      "Acceleration":11.5,
+      "Acceleration":4.5,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"UK",
+"image": "/images/Range Rover SV.jpg"
    },
    {
-      "Name":"ford torino (sw)",
+      "Name":"ford f150",
       "Miles_per_Gallon":null,
       "Cylinders":8,
       "Displacement":351,
-      "Horsepower":153,
+      "Horsepower":350,
       "Weight_in_lbs":4034,
-      "Acceleration":11,
+      "Acceleration":8,
       "Year":"1970-01-01",
-      "Origin":"USA"
+      "Origin":"USA",
+"image": "/images/ford f150.jpg"
    },
    {
       "Name":"Audi A7",
@@ -151,7 +213,8 @@
       "Weight_in_lbs":4166,
       "Acceleration":10.5,
       "Year":"2003-01-01",
-      "Origin":"Germany"
+      "Origin":"Germany",
+"image": "/images/Audi A7.jpg"
    },
    {
       "Name":"Audi R8",
@@ -160,34 +223,13 @@
       "Displacement":360,
       "Horsepower":600,
       "Weight_in_lbs":3850,
-      "Acceleration":11,
+      "Acceleration":2.8,
       "Year":"1999-01-01",
-      "Origin":"Germany"
+      "Origin":"Germany",
+"image": "/images/Audi R8.jpg"
    },
    {
-      "Name":"dodge challenger se",
-      "Miles_per_Gallon":15,
-      "Cylinders":8,
-      "Displacement":383,
-      "Horsepower":170,
-      "Weight_in_lbs":3563,
-      "Acceleration":10,
-      "Year":"1970-01-01",
-      "Origin":"USA"
-   },
-   {
-      "Name":"plymouth 'cuda 340",
-      "Miles_per_Gallon":14,
-      "Cylinders":8,
-      "Displacement":340,
-      "Horsepower":160,
-      "Weight_in_lbs":3609,
-      "Acceleration":8,
-      "Year":"1970-01-01",
-      "Origin":"USA"
-   },
-   {
-      "Name":"ford mustang boss 302",
+      "Name":"ford mustang",
       "Miles_per_Gallon":null,
       "Cylinders":8,
       "Displacement":302,
@@ -195,28 +237,7 @@
       "Weight_in_lbs":3353,
       "Acceleration":8,
       "Year":"1970-01-01",
-      "Origin":"USA"
-   },
-   {
-      "Name":"Nissan GTR",
-      "Miles_per_Gallon":25,
-      "Cylinders":8,
-      "Displacement":400,
-      "Horsepower":600,
-      "Weight_in_lbs":3761,
-      "Acceleration":3.5,
-      "Year":"2012-01-01",
-      "Origin":"Japan"
-   },
-   {
-      "Name":"buick estate wagon (sw)",
-      "Miles_per_Gallon":14,
-      "Cylinders":8,
-      "Displacement":455,
-      "Horsepower":225,
-      "Weight_in_lbs":3086,
-      "Acceleration":10,
-      "Year":"1970-01-01",
-      "Origin":"USA"
-   } 
+      "Origin":"USA",
+"image": "/images/ford mustang.jpg"
+   }
       ]

@@ -75,6 +75,7 @@ function appendData(data) {
         var card = document.createElement('div');
         var cardTitle = document.createElement('h5');
         var theButton = document.createElement('button');
+        var cardImage = document.createElement('img');
 
         theButton.addEventListener('click', function () {
             detailPop(data[i])
@@ -82,6 +83,13 @@ function appendData(data) {
         })
         let newOutput = '';
         for (let key in data[i]) {
+            if (data[i].image) {
+                cardImage.setAttribute('src', data[i].image);
+
+                if (data[i].alt) {
+                    cardImage.setAttribute('alt', data[i].alt);
+                }
+            }
             if (key === "Name" || key === "Origin" || key === "Cylinders") {
                 newOutput += key + ': ' + data[i][key] + "<br/>";
                 cardTitle.innerHTML = newOutput;
@@ -96,8 +104,9 @@ function appendData(data) {
         card.setAttribute('draggable', 'true');
         card.classList.add('card', 'draggable');
         theButton.classList.add('btn', 'btn-primary');
+        cardImage.className = 'cardImage';
 
-        card.append(cardTitle, theButton);
+        card.append(cardImage, cardTitle, theButton);
         cards.appendChild(card);
 
         document.querySelector(`#cardId${i}`).addEventListener('dragstart', (e) => {
