@@ -658,3 +658,7 @@ footer ul {
     width: 100%;
   }
 }
+.cardImage {
+  width: 290px;
+  height: 191px;
+}
